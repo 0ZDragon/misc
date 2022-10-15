@@ -17,7 +17,7 @@ unzip platform-tools-latest-linux.zip -d ~
 ```
 > 提示: 文件的名称可能与此命令中的名称不同，需要做相应调整。
 
-现在需要将adb和fastboot添加到环境变量PATH中。打开**~/.profile**并添加如下内容：
+现在需要将adb和fastboot添加到环境变量PATH中。打开 **~/.profile** 并添加如下内容：
 ```
 # add Android SDK platform tools to path
 if [ -d "$HOME/platform-tools" ] ; then

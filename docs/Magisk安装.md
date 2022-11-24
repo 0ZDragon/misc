@@ -17,7 +17,7 @@
 
 <p align="center"><img src="1.png" width="500"/></p>
 
-**Ramdisk** 的结果决定了您的设备的boot分区中是否有 ramdisk。 如果您的设备没有启用 ramdisk，请在继续之前阅读[REC中的 Magisk](#REC中的 Magisk)。
+**Ramdisk** 的结果决定了您的设备的boot分区中是否有 ramdisk。 如果您的设备没有启用 ramdisk，请在继续之前阅读 [REC中的 Magisk](#recovery-%E4%B8%AD%E7%9A%84-magisk)。
 
 > _（不幸的是，有些设备的引导加载程序会接受 ramdisk，即使它不应该接受。 在这种情况下，您必须按照说明进行操作，就好像您的设备的引导分区确实包含 ramdisk 一样。 没有办法检测到这一点，因此唯一可以确定的方法就是实际尝试。 幸运的是，据我们所知，只有部分小米设备具有此属性，所以大多数人可以简单地忽略这条信息。）_
 
@@ -51,7 +51,7 @@
 - 如果您的设备**没有**单独的 `vbmeta` 分区，请选中**“修补 boot 镜像中的 vbmeta”**选项
 - 在方式中选择 **"选择并修补一个文件"** ，选择 boot/recovery 镜像
 - 开始安装，并使用 adb 将修补后的镜像复制到您的 PC：<br>
-  `adb pull /sdcard/Download/magisk_patched_[random_strings].img`
+  `adb pull /sdcard/Download/magisk_patched_[random_strings].img`<br>
   **不要使用 MTP**，因为它会损坏大文件。
 - 将修补后的 boot/recovery 镜像刷入到您的设备。<br>
   对于大多数设备，重启进入fastboot模式并使用命令刷入：<br>

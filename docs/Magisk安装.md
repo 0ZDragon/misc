@@ -1,6 +1,6 @@
 # 安装
 
-如果您已经安装了 Magisk ，**强烈建议**直接通过Magisk应用程序的“直接安装”方法进行升级。以下教程仅针对初始安装。
+如果您已经安装了 Magisk ，**强烈建议**直接通过Magisk应用程序的「直接安装」方法进行升级。以下教程仅针对初始安装。
 
 - 如果您在使用运行着 **EMUI 8** 或更高版本的华为设备，请查看[相应部分](#华为)。
 - 如果您使用的是**搭载 Android 9.0** 或更高版本的三星设备（2019 年新设备），请查看[相应部分](#三星-system-as-root)。
@@ -21,7 +21,7 @@
 
 **Ramdisk** 的结果确定您的设备在 boot 分区中是否有 ramdisk。如果您的设备没有启动 ramdisk，请在继续之前阅读 [Recovery 中的 Magisk](#recovery-中的-magisk) 部分。
 
-> _（不幸的是，有一些例外情况，因为某些设备的引导加载程序会接受 ramdisk，即使它不应该接受。 在这种情况下，您必须按照说明进行操作，就好像您的设备的 boot 分区**包含 ramdisk 一样**。 没有什么办法检测到这一点，因此唯一可以确定的方法就是实际尝试。 幸运的是，据我们所知，只有部分小米设备具有此属性，所以大多数人可以忽略这条信息。）
+> （不幸的是，有一些例外情况，因为某些设备的引导加载程序会接受 ramdisk，即使它不应该接受。 在这种情况下，您必须按照说明进行操作，就好像您的设备的 boot 分区**包含 ramdisk 一样**。 没有什么办法检测到这一点，因此唯一可以确定的方法就是实际尝试。 幸运的是，据我们所知，只有部分小米设备具有此属性，所以大多数人可以忽略这条信息。）
 
 
 如果您的设备**有启动 ramdisk**，请获取 `boot.img`（ 或者 `init_boot.img`（如果存在，在出厂时搭载安卓13的设备通常是这样的，比如红米K60Pro）的副本。<br>
@@ -56,9 +56,9 @@
 
 - 将 boot 或 recovery 映像（ `*.img` 文件）复制到设备
 - 按下 Magisk 主屏幕中的 **“安装”** 按钮
-- 如果要修补 recovery 映像，请选中 **“Recovery 模式”** 选项
-- 如果您的设备**没有单独的 `vbmeta` 分区**，请选中 **“修补 boot 映像中的 vbmeta”** 选项
-- 在方式中选择 **“选择并修补一个文件”** ，然后选择 boot 或 recovery 映像
+- 如果要修补 recovery 映像，请选中 **「Recovery 模式」** 选项
+- 如果您的设备**没有单独的 `vbmeta` 分区**，请选中 **「修补 boot 映像中的 vbmeta」** 选项
+- 在方式中选择 **「选择并修补一个文件」** ，然后选择 boot 或 recovery 映像
 - 开始安装，并使用 ADB 将修补的映像复制到您的电脑：<br>
 
   ``` shell
@@ -119,16 +119,16 @@
 - 重启到下载模式：将设备关机，然后按下设备的下载模式键组合
 - 长按音量上限可解锁引导加载程序**这将擦除数据并自动重新启动**
 - 完成初始设置。跳过所有步骤，因为数据将在后面的步骤中再次擦除。**在设置过程中将设备连接到互联网**
-- 启用开发者选项，**确认「OEM解锁」选项存在且呈灰色。**这意味着 `VaultKeeper` 服务释放了引导加载程序。
+- 启用开发者选项，**确认「OEM解锁」选项存在且呈灰色。** 这意味着 `VaultKeeper` 服务释放了引导加载程序。
 - 您的 bootloader 现在在下载模式允许非官方映像
 
 ### 操作指南
 
-- 使用 [samfirm.js](https://github.com/jesec/samfirm.js)，[Frija](https://forum.xda-developers.com/s10-plus/how-to/tool-frija-samsung-firmware-downloader-t3910594)，或 [Samloader](https://forum.xda-developers.com/s10-plus/how-to/tool-samloader-samfirm-frija-replacement-t4105929) 直接从三星服务器下载设备的最新 zip 固件 。
-- 解压缩固件并将 `AP` tar 文件复制到设备。它通常命名为 `AP_[device_model_sw_ver].tar.md5`
-- 按下 Magisk 主屏幕中的**安装**按钮
-- 如果您的设备**没有**启动 ramdisk，勾选 **“Recovery模式”** 选项
-- 在方式中选择 **“选择并修补一个文件”** ，然后选择 `AP` tar文件
+- 使用 [samfirm.js](https://github.com/jesec/samfirm.js), [Frija](https://forum.xda-developers.com/s10-plus/how-to/tool-frija-samsung-firmware-downloader-t3910594), 或 [Samloader](https://forum.xda-developers.com/s10-plus/how-to/tool-samloader-samfirm-frija-replacement-t4105929) 直接从三星服务器下载设备的最新 zip 固件 。
+- 解压缩固件并将 `AP` tar 文件复制到您的设备。 它通常命名为 `AP_[device_model_sw_ver].tar.md5`
+- 点击 Magisk 主屏幕中的**安装**按钮
+- 如果您的设备**没有**启动 ramdisk，勾选 **「Recovery模式」** 选项
+- 在方式中选择 **「选择并修补一个文件」** ，然后选择 `AP` tar文件
 - 开始安装，并使用ADB将修补的tar文件复制到您的电脑：
 
   ``` shell
@@ -136,21 +136,21 @@
   ```
 
   注意：**不要使用MTP**，因为它可能会损坏大型文件。
-- 重新引导至下载模式。在 PC 上打开 Odin，然后刷入 `magisk_patched.tar` 作为 `AP`，并伴随着 `BL`，`CP` 和 `CSC` （**不是** `HOME_CSC` ，因为我们想**擦除数据**） 从原始固件。
-- Odin完成刷入后，设备将自动重新启动。如果询问，同意进行工厂重置。
-- 如果您的设备**没有**启动 ramdisk，请立即重新启动恢复以启用 Magisk（原因在 [Recovery 中的 Magisk](#recovery-中的-magisk) 中说明）。
-- 安装您已下载的 Magisk 应用程序并启动它。它将显示一个对话框，要求进行其他设置。
-- 让 APP 完成其工作并自动重新启动设备。
+- 重新启动到下载模式。 在您的 PC 上打开 Odin，将 `magisk_patched.tar` 作为 `AP`，连同原始固件中的 `BL`、`CP` 和 `CSC`（**不是** `HOME_CSC`，因为我们要**清除数据**）一起刷入。
+- 一旦 Odin 完成刷机，您的设备应该会自动重启。 如果被要求恢复出厂设置，请同意。
+- 如果您的设备**没有**启动 ramdisk，请立即重新启动到 recovery 以启用 Magisk（原因在 [Recovery 中的 Magisk](# Recovery 中的 Magisk) 中说明）。
+- 安装您已经下载的 [Magisk 应用程序](https://github.com/topjohnwu/Magisk/releases/latest) 并启动该应用程序。 它应该显示一个对话框，要求进行额外的设置。
+- 让应用程序完成它的工作并自动重启设备。
 
 ### 系统升级
 
-一旦你的三星设备获得了 root 权限，你就不能再通过 OTA 升级你的 Android 操作系统了。要升级设备的操作系统，您必须手动下载新的固件 zip 文件，成上一节中编写的相同 `AP` 修补过程。**这里唯一的区别在于Odin刷入步骤：不要使用 `CSC` tar，而是在执行升级时使用 `HOME_CSC` tar，不是初始安装**。
+一旦你的三星设备获得了 root 权限，你就不能再通过 OTA 升级你的 Android 系统了。 要升级设备的系统，您必须手动下载新的固件 zip 文件并完成上一节中编写的相同 `AP` 修补过程。**这里唯一的区别在于 Odin 刷机步骤：不要使用 `CSC` tar，而是使用 `HOME_CSC` tar，因为我们正在执行升级，而不是初始安装**。
 
 ### 注意事项
 
-- **永远不要**尝试将 `boot` 、`recovery` 或 `vbmeta` 分区恢复到官方！这样做会破坏您的设备。从中恢复的唯一方法是清除数据进行完整的 Odin 恢复。
-- 要使升级设备的固件，**切勿**直接使用官方存 `AP` tar 文件，原因如上所述。**始终在 Magisk 应用程序中修补 `AP` 并使用它**。
-- 永远不要只刷入 `AP` ，否则 Odin 可能会缩小 `/data` 文件系统的大小。升级时请刷入 `AP` + `BL` + `CP` + `HOME_CSC` 。
+- **永远、永远不要**尝试将 `boot`、`recovery`或 `vbmeta` 分区恢复到原样！ 您这样做会破坏您的设备，并且从中恢复的唯一方法是清除数据并进行完整的 Odin 恢复。
+- 要使用新固件升级您的设备，**切勿**出于上述原因直接使用原厂 `AP` tar 文件。 **始终**在 Magisk 应用程序中修补 `AP` 并改用它。
+- 永远不要只刷 `AP`，否则 Odin 可能会缩小 `/data` 文件系统的大小。 升级时刷 `AP` + `BL` + `CP` + `HOME_CSC`。
 
 ## 华为
 
@@ -162,7 +162,7 @@
 好像链接失效了
 -->
 
-华为不发布官方出厂映像，但大多数固件压缩包可以从[华为固件数据库](http://pro-teammt.ru/firmware-database/) 下载。 要从 zip 中的“UPDATE.APP”中提取映像，您必须使用 [Huawei Update Extractor](https://forum.xda-developers.com/showthread.php?t=2433454)（仅限 Windows！）
+华为不发布官方出厂映像，但大多数固件压缩包可以从[华为固件数据库](http://pro-teammt.ru/firmware-database/) 下载。 要从 zip 中的「UPDATE.APP」中提取映像，您必须使用 [Huawei Update Extractor](https://forum.xda-developers.com/showthread.php?t=2433454)（仅限 Windows！）
 
 ### EMUI 8
 
@@ -175,13 +175,13 @@
 请注意，您正在刷入 `ramdisk`，而不是 `boot`！
 
 ### EMUI 9 或更高版本
-对于 EMUI 9+ 设备，`ramdisk` 分区不再存在。 作为解决方法，Magisk 将安装到“recovery_ramdisk”分区。 **在按照以下说明操作之前，请先阅读 [Recovery 中的 Magisk](#recovery-中的-magisk) ！**
+对于 EMUI 9+ 设备，`ramdisk` 分区不再存在。 作为解决方法，Magisk 将安装到「recovery_ramdisk」分区。 **在按照以下说明操作之前，请先阅读 [Recovery 中的 Magisk](#recovery-中的-magisk) ！**
 
 *注意：正如我在 荣耀 View 10 上测试的那样，华为的内核似乎无法在早期启动时捕获按键事件，因此长按提高音量不会在我的设备上**不**启动到 Recovery。 您的体验可能会有所不同。
 
 - 如果您打算使用第三方 Recovery，只需按照自定义恢复的说明进行操作即可。 <br>
 **警告：Magisk 将覆盖第三方 Recovery。**
-- 如果您不打算使用第三方 Recovery，则必须从固件中提取「RECOVERY_RAMDIS.img」”。 按照上面的引导映像修补说明进行操作，但使用「RECOVERY_RAMDIS.img」文件而不是 boot 映像！
+- 如果您不打算使用第三方 Recovery，则必须从固件中提取「RECOVERY_RAMDIS.img」。 按照上面的引导映像修补说明进行操作，但使用「RECOVERY_RAMDIS.img」文件而不是 boot 映像！
 - 要将修补后的映像刷入您的设备，请使用 fastboot 命令：<br>
 `fastboot flash recovery_ramdisk /path/to/magisk_patched.img` <br>
 请注意，您正在刷新到 `recovery_ramdisk`，而不是 `boot`！

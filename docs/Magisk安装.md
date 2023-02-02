@@ -17,14 +17,14 @@
 
 下载并安装最新的 [Magisk 应用程序](https://github.com/topjohnwu/Magisk/releases/latest). 在主屏幕中，您应该看到：
 
-<p align="center"><img src="/images/device_info.png" width="500"/></p>
+<p align="center"><img src="1.png" width="500"/></p>
 
 **Ramdisk** 的结果确定您的设备在 boot 分区中是否有 ramdisk。如果您的设备没有启动 ramdisk，请在继续之前阅读 [Recovery 中的 Magisk](#recovery-中的-magisk) 部分。
 
 > （不幸的是，有一些例外情况，因为某些设备的引导加载程序会接受 ramdisk，即使它不应该接受。 在这种情况下，您必须按照说明进行操作，就好像您的设备的 boot 分区**包含 ramdisk 一样**。 没有什么办法检测到这一点，因此唯一可以确定的方法就是实际尝试。 幸运的是，据我们所知，只有部分小米设备具有此属性，所以大多数人可以忽略这条信息。）
 
 
-如果您的设备**有启动 ramdisk**，请获取 `boot.img`（ 或者 `init_boot.img`（如果存在，在出厂时搭载安卓13的设备通常是这样的，比如红米K60Pro）的副本。<br>
+如果您的设备**有启动 ramdisk**，请获取 `boot.img`，或者 `init_boot.img`（如果存在，在出厂时搭载安卓13的设备通常是这样的，比如红米K60Pro）的副本。<br>
 如果您的设备**没有启动 ramdisk**，请获取 `recovery.img` 的副本。<br>
 
 您可以从官方固件包或第三方 ROM 刷机包中提取所需文件。
@@ -99,7 +99,7 @@
 - **(按键组合) → (启动屏幕) → (释放所有按钮) → (带有 Magisk 的系统)**
 - **(按键组合) → (启动屏幕) → (长按音量+) → (Recovery 模式)**
 
-（注意：在这种情况下，您**不能使用 第三方 Recovery 来安装或升级 Magisk**！！）
+（注意：在这种情况下，您**不能使用第三方 Recovery 来安装或升级 Magisk**！！）
 
 ## 三星 (System-as-root)
 

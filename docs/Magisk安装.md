@@ -162,13 +162,13 @@
 好像链接失效了
 -->
 
-华为不发布官方出厂映像，但大多数固件压缩包可以从[华为固件数据库](http://pro-teammt.ru/firmware-database/) 下载。 要从 zip 中的「UPDATE.APP」中提取映像，您必须使用 [Huawei Update Extractor](https://forum.xda-developers.com/showthread.php?t=2433454)（仅限 Windows！）
+华为不发布官方出厂映像，但大多数固件压缩包可以从[华为固件数据库](http://pro-teammt.ru/firmware-database/) 下载。 要从压缩包中的「UPDATE.APP」中提取映像，您必须使用 [Huawei Update Extractor](https://forum.xda-developers.com/showthread.php?t=2433454)（仅限 Windows！）
 
 ### EMUI 8
 
 对于运行 EMUI 8 的设备，您的设备有一个名为 `ramdisk` 的分区，这是将要安装 Magisk 的地方。
 
-- 如果您打算使用第三方 Recovery，只需按照[第三方 Recovery](#第三方 Recovery)的说明进行操作即可。
+- 如果您打算使用第三方 Recovery，只需按照[第三方 Recovery](#第三方-Recovery)的说明进行操作即可。
 - 如果您不打算使用第三方 Recovery，则必须从您的固件中提取 `RAMDISK.img`。 按照上面的[修补映像](#修补映像)说明进行操作，但使用 `RAMDISK.img` 文件而不是 boot 映像！
 - 要将修补后的映像刷入您的设备，请使用 fastboot 命令：<br>
 `fastboot flash ramdisk /path/to/magisk_patched.img` <br>
